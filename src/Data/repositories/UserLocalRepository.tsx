@@ -1,6 +1,6 @@
 import { UserLocalRepository } from '../../Domain/respositories/UserLocalRepository';
 import { LocalStorage } from '../sources/local/LocalStorage';
-import { User } from '../../../../Respaldo front/AppDeliveryReactNative/src/Domain/entities/user';
+import { User } from '../../Domain/entities/User';
 
 export class UserLocalRepositoryImp implements UserLocalRepository{
     async save(user:User): Promise<void>{

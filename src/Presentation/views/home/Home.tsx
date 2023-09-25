@@ -23,7 +23,12 @@ export const HomeScreen = ({navigation,route}:Props) => {
 
     useEffect(()=>{
         if(user?.id !== null && user?.id !== undefined){
-            navigation.replace('ProfileinfoScreen');
+            if(user.roles?.length! > 1){
+                console.log("if roles ")
+                navigation.replace('RolesScreen');
+            }else {
+                 navigation.replace('ClientTabsNavigator');
+                }
         }
 
     }, [user])

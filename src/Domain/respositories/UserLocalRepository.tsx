@@ -1,4 +1,5 @@
-import { User } from '../../../../Respaldo front/AppDeliveryReactNative/src/Domain/entities/user';
+import { User } from "../entities/User"
+
 export interface UserLocalRepository{
     save(User: User): Promise<void>
     getUser():Promise<User>

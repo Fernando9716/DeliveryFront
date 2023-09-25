@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { GetUserLocalUseCase } from '../../Domain/useCases/userLocal/GetUserLocal';
-import { User } from '../../Domain/entities/user';
+import { User } from '../../Domain/entities/User';
 
 export const useUserLocal = () => {
   const [user, setUser] = useState<User>();

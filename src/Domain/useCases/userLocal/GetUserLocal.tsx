@@ -1,5 +1,5 @@
 import { UserLocalRepositoryImp } from "../../../Data/repositories/UserLocalRepository";
-import { User } from "../../entities/user";
+import { User } from "../../entities/User";
 
 const {getUser} = new UserLocalRepositoryImp;
 
