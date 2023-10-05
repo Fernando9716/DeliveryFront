@@ -41,7 +41,8 @@ export const AdminTabsNavigator = () => {
       component={ProfileinfoScreen} 
       options={{
         title:'Perfil',
-        tabBarLabel:'Categorias',
+        tabBarLabel:'Perfil',
+        headerShown: false,
         tabBarIcon: ({ color })=>(
           <Image
           source={require('../../../assets/user_menu.png')}

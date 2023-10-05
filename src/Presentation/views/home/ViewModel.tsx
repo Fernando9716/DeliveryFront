@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { LoginAuthUseCase } from '../../../Domain/useCases/auth/LoginAuth';
 import { SaveUserLocalUseCase } from '../../../Domain/useCases/userLocal/SaveUserLocal';
 import { useUserLocal } from '../../hooks/useUserLocal';
+import { UserContext } from '../../../context/UserContext';
 
 const HomeViewwModel = () => {
   const [errorMessage, setErrorMessage] = useState('');
@@ -10,7 +11,8 @@ const HomeViewwModel = () => {
     password: ''
   });
 
-  const {user,getUserSession} = useUserLocal();
+  //const {user,getUserSession} = useUserLocal();
+  const {user, saveUserSesion} = useContext(UserContext);
   console.log( "USUARIO DE SESION :" ,JSON.stringify(user));
 
 
@@ -24,8 +26,7 @@ const HomeViewwModel = () => {
       if(!response.success){
         setErrorMessage(response.error);
       }else{
-        await SaveUserLocalUseCase(response.data);
-        getUserSession();
+        await saveUserSesion(response.data);
       }
     }
   }

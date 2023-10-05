@@ -42,8 +42,8 @@ export const ClientTabsNavigator=()=> {
       component={ProfileinfoScreen} 
       options={{
         title:'Perfil',
-        //headerShown: false,
-        tabBarLabel:'Categorias',
+        tabBarLabel:'Perfil',
+        headerShown: false,
         tabBarIcon: ({ color })=>(
           <Image
           source={require('../../../assets/user_menu.png')}

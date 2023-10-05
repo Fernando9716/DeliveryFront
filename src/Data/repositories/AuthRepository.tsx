@@ -19,7 +19,7 @@ export class AuthRepositoryImpl implements AuthRepository{
 
             let e = (error as AxiosError);
             
-            console.log('ERROR AuthRepositoryImpl : ',JSON.stringify(e.response?.data))
+            console.log('ERROR AuthRepositoryImpl : ',e)
             const apiError :ResponseApiDelivery = JSON.parse(JSON.stringify(e.response?.data));
             return Promise.resolve(apiError);
         }
@@ -35,6 +35,7 @@ export class AuthRepositoryImpl implements AuthRepository{
             type:mime.getType(file.uri), 
             name: file.uri.split('/').pop()
             }as any)
+            //console.log("esto se va a subir con imagen ", data.get("image"))
             data.append('user',JSON.stringify(user));
 
             const response = await ApiDeliveryForImage.post<ResponseApiDelivery>('/users/registerWithImage',data)
@@ -68,5 +69,6 @@ export class AuthRepositoryImpl implements AuthRepository{
             return Promise.resolve(apiError);
         }
     }
+
 
 }

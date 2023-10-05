@@ -16,6 +16,6 @@ export const useUserLocal = () => {
 
   return {
     user
-    , getUserSession
+    ,getUserSession
   }
 }

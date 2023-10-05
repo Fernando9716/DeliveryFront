@@ -10,5 +10,6 @@ export interface User{
         confirmPassword:    string;
         accessToken?:       string;
         refreshToken?:      string;
+        image?:             string;
         roles?:             Rol[];
 }
